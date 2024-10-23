@@ -1,0 +1,19 @@
+{
+  "name": "be.mathlie.boatmb",
+  "version": "0.0.1",
+  "displayName": "Mathias Boat for Meet and Boat Game",
+  "description": "Assets for the game",
+  "unity": "2019.1",
+  "unityRelease": "0b5",
+  "documentationUrl": "https://github.com/MathiasLiesenborghs/2024_10_MeetBoatMathias",
+  "licensesUrl": "https://choosealicense.com/licenses/mit/l",
+ "keywords": [
+    "Toolbox",
+    "Script",
+  ],
+  "author": {
+    "name": "Mathias Liesenborghs",
+    "email": "itjustwork@gmai.com",
+    "url": "https://github.com/MathiasLiesenborghs"
+  }
+}
