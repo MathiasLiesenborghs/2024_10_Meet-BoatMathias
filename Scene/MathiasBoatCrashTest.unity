@@ -379,7 +379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13287ee9d22fbe945b56c9a1752a906c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_inputAction: {fileID: 60334288724481031, guid: ca78c1855976e514c94ea3add6a009b9,
+  m_inputAction: {fileID: -1719311060866779298, guid: ca78c1855976e514c94ea3add6a009b9,
     type: 3}
   m_onValueChanged:
     m_PersistentCalls:
@@ -395,19 +395,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 1
-      - m_Target: {fileID: 1506317898}
-        m_TargetAssemblyTypeName: Mathias.BoatControlDirection, be.mathlie.
-        m_MethodName: SetVertical
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
+        m_CallState: 2
   m_borderRange: 0.8
   m_deathZone: 0.1
   m_axisValue: 0
@@ -423,7 +411,74 @@ Transform:
   m_GameObject: {fileID: 771546914}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.048557986, y: 0.0067155156, z: 0.046086404}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &829147328
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 829147330}
+  - component: {fileID: 829147329}
+  m_Layer: 0
+  m_Name: InputGeneric (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &829147329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829147328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13287ee9d22fbe945b56c9a1752a906c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_inputAction: {fileID: 1784987628986271055, guid: ca78c1855976e514c94ea3add6a009b9,
+    type: 3}
+  m_onValueChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1506317898}
+        m_TargetAssemblyTypeName: Mathias.BoatControlDirection, be.mathlie.
+        m_MethodName: SetVertical
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_borderRange: 0.8
+  m_deathZone: 0.1
+  m_axisValue: 0
+  m_isMin: 0
+  m_isMax: 0
+  m_isInDeathZone: 0
+--- !u!4 &829147330
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829147328}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -864,9 +919,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee0753ea6b3d70b4289de45000b31013, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_rotationLeftRight: 90
-  m_frontalSpeed: 10
-  m_backSpeed: 5
+  m_rotationLeftRight: 120
+  m_frontalSpeed: 0.3
+  m_backSpeed: 0.2
   m_whatToMove: {fileID: 1506317897}
   m_rotateHorizontal: 0
   m_moveVertical: 0
@@ -1012,3 +1067,4 @@ SceneRoots:
   - {fileID: 1187207288}
   - {fileID: 1506317897}
   - {fileID: 771546916}
+  - {fileID: 829147330}
