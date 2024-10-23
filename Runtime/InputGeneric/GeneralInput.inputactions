@@ -27,7 +27,7 @@
                     "name": "Joystick",
                     "type": "Value",
                     "id": "654a693b-f26c-4aae-b75a-f9b393fcf1f8",
-                    "expectedControlType": "Vector2",
+                    "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true

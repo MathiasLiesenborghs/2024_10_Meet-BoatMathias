@@ -1,48 +1,65 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Mathias
 {
-
-    public class MovingScriptTestMono : MonoBehaviour
+    public class BoatControlDirection : MonoBehaviour
     {
-        [Range(-1, 1)]
-        [SerializeField] float m_percentHorizontalAxis;
-        [Range(-1, 1)]
-        [SerializeField] float m_percentVerticalAxis;
-
         /// <summary>
-        /// This is the rotation of the boat in agnle left to right
+        /// This is the rotation of the boat in angle left to right.
         /// </summary>
         [Tooltip("This rotation is in angle around Y axis")]
         public float m_rotationLeftRight = 90f;
-        [Tooltip("This is speed in meter to go foward")]
+
+        [Tooltip("This is speed in meter to go forward")]
         public float m_frontalSpeed = 10f;
+
         [Tooltip("This is speed in meter to go backward")]
         public float m_backSpeed = 5f;
 
         public Transform m_whatToMove;
 
-        private void Update()
-        {
-            // Mise à jour des mouvements
-            float horizontalInput = Input.GetAxis("Horizontal") * m_percentHorizontalAxis;
-            float verticalInput = Input.GetAxis("Vertical") * m_percentVerticalAxis;
+        // Added fields for movement and rotation input
+        [Range(-1f, 1f)]
+        [SerializeField] float m_rotateHorizontal;
+        [Range(-1f, 1f)]
+        [SerializeField] float m_moveVertical;
 
-            // Rotation du bateau
-            m_whatToMove.Rotate(0, horizontalInput * m_rotationLeftRight * Time.deltaTime, 0);
-
-            // Mouvement du bateau
-            Vector3 forwardMovement = m_whatToMove.forward * verticalInput * (verticalInput > 0 ? m_frontalSpeed : -m_backSpeed) * Time.deltaTime;
-            m_whatToMove.position += forwardMovement;
-        }
 
         public void SetHorizontal(float percent)
         {
-            m_percentHorizontalAxis = Mathf.Clamp(percent, -1f, 1f);
+            percent = Mathf.Clamp(percent, -1f, 1f);
+            m_rotateHorizontal = percent;
+
+        }
+        public void SetVertical(float percent)
+        {
+            percent = Mathf.Clamp(percent, -1f, 1f);
+            m_moveVertical = percent;
+        }
+        private void Update()
+        {
+            MoveBoat();
         }
 
-        public void SetVertical(float percent) => m_percentVerticalAxis = Mathf.Clamp(percent, -1f, 1f);
+        private void MoveBoat()
+        {
+            // Calculate forward/backward movement
+            float speed = m_moveVertical > 0 ? m_frontalSpeed : m_backSpeed;
+            Vector3 forwardMovement = m_whatToMove.forward * m_moveVertical * speed * Time.deltaTime;
+
+            // Apply movement
+            m_whatToMove.position += forwardMovement;
+
+            // Calculate left/right rotation
+            float rotation = m_rotateHorizontal * m_rotationLeftRight * Time.deltaTime;
+
+            // Apply rotation
+            m_whatToMove.Rotate(0, rotation, 0);
+        }
+
+        
     }
 }
